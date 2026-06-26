@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viral Bharat – वायरल भारत | Memes, Facts, Trending India</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --deep-saffron: #E55A00;
+    --black: #0D0D0D;
+    --dark: #1A1A1A;
+    --card-bg: #1E1E1E;
+    --white: #FFFFFF;
+    --gold: #FFD700;
+    --green: #00C853;
+    --red: #FF1744;
+    --text-muted: #999;
+    --border: #2E2E2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    font-weight: 700;
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--dark);
+    border-bottom: 3px solid var(--saffron);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    box-shadow: 0 4px 20px rgba(255,107,0,0.3);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-flame { font-size: 28px; animation: flicker 1.5s ease-in-out infinite alternate; }
+  @keyframes flicker { 0% { transform: scale(1) rotate(-3deg); } 100% { transform: scale(1.1) rotate(3deg); } }
+
+  .logo-text {
+    font-family: 'Baloo 2', cursive;
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+  .logo-sub {
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-text-fill-color: var(--text-muted);
+  }
+
+  .header-nav { display: flex; gap: 6px; }
+  .header-nav a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 20px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .header-nav a:hover { background: var(--saffron); color: white; }
+  .header-nav a.active { background: var(--saffron); color: white; }
+
+  .header-search {
+    display: flex;
+    align-items: center;
+    background: #2a2a2a;
+    border-radius: 25px;
+    padding: 6px 14px;
+    gap: 6px;
+    border: 1px solid var(--border);
+  }
+  .header-search input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    width: 160px;
+  }
+  .header-search input::placeholder { color: #666; }
+
+  /* ===== TICKER ===== */
+  .ticker {
+    background: var(--saffron);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 34px;
+  }
+  .ticker-tag {
+    background: var(--black);
+    color: var(--saffron);
+    padding: 0 14px;
+    font-size: 11px;
+    font-weight: 900;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+  .ticker-content {
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1;
+  }
+  .ticker-content span { display: inline-block; animation: tickrun 40s linear infinite; }
+  @keyframes tickrun { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background: linear-gradient(160deg, #1A0A00 0%, #0D0D0D 40%, #0A0A1A 100%);
+    padding: 30px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 320px;
+    gap: 14px;
+  }
+
+  /* BIG FEATURED CARD */
+  .feat-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    grid-column: 1 / 3;
+    position: relative;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .feat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(255,107,0,0.25); }
+
+  .feat-card-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a0800, #2d1500, #1a0820);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    opacity: 0.15;
+  }
+  .feat-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  }
+  .feat-card-content {
+    position: relative;
+    padding: 24px;
+    z-index: 2;
+  }
+  .feat-category {
+    display: inline-block;
+    background: var(--saffron);
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .feat-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .feat-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #aaa;
+  }
+  .feat-meta .views { color: var(--saffron); font-weight: 900; }
+
+  /* SIDE STACK */
+  .side-stack { display: flex; flex-direction: column; gap: 10px; }
+
+  .mini-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .mini-card:hover { border-color: var(--saffron); background: #242424; transform: translateX(4px); }
+  .mini-card-emoji { font-size: 32px; flex-shrink: 0; }
+  .mini-card-title { font-size: 13px; font-weight: 800; line-height: 1.35; color: #eee; }
+  .mini-card-tag { font-size: 10px; font-weight: 800; color: var(--saffron); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* ===== MAIN LAYOUT ===== */
+  .main-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-head h2 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+  }
+  .section-head .line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--saffron), transparent);
+  }
+  .section-head .see-all {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--saffron);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* ===== CONTENT GRID ===== */
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .post-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.22s;
+  }
+  .post-card:hover { border-color: var(--saffron); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,107,0,0.2); }
+
+  .post-thumb {
+    background: linear-gradient(135deg, #1E1E2E, #2A1A0A);
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .post-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.6));
+  }
+  .post-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--red);
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    z-index: 1;
+  }
+  .post-badge.green { background: var(--green); color: #000; }
+  .post-badge.gold { background: var(--gold); color: #000; }
+  .post-badge.saffron { background: var(--saffron); }
+
+  .post-body { padding: 12px; }
+  .post-title {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #eee;
+    margin-bottom: 8px;
+  }
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #666;
+  }
+  .post-footer .fire { color: var(--saffron); font-weight: 900; }
+
+  /* ===== MEME ROW ===== */
+  .meme-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .meme-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .meme-card:hover { border-color: var(--gold); transform: scale(1.03); }
+  .meme-img {
+    background: linear-gradient(135deg, #0D1A2E, #1A0D1A, #1A1A0D);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+  .meme-cap {
+    padding: 8px 10px;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #ddd;
+    line-height: 1.35;
+  }
+  .meme-stats {
+    padding: 6px 10px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #555;
+    display: flex;
+    gap: 10px;
+  }
+  .meme-stats span { color: var(--gold); }
+
+  /* ===== FACTS SECTION ===== */
+  .facts-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+  .fact-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .fact-item:hover { border-color: var(--green); background: #1a2a1a; }
+  .fact-num {
+    font-family: 'Baloo 2', cursive;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--saffron);
+    opacity: 0.5;
+    flex-shrink: 0;
+    line-height: 1;
+    width: 36px;
+  }
+  .fact-text { font-size: 13px; font-weight: 800; color: #ddd; line-height: 1.4; }
+  .fact-emoji { font-size: 22px; flex-shrink: 0; }
+
+  /* ===== ROAST SECTION ===== */
+  .roast-card {
+    background: linear-gradient(135deg, #1A0A00, #2D1500);
+    border: 2px solid var(--saffron);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .roast-card::before {
+    content: '🔥';
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 80px;
+    opacity: 0.1;
+  }
+  .roast-label {
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--saffron);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .roast-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .roast-text { font-size: 13px; font-weight: 700; color: #bbb; line-height: 1.6; margin-bottom: 14px; }
+  .roast-btn {
+    display: inline-block;
+    background: var(--saffron);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .roast-btn:hover { background: var(--deep-saffron); }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+  .sidebar-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .sidebar-head {
+    background: linear-gradient(to right, var(--saffron), var(--deep-saffron));
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* TRENDING LIST */
+  .trend-list { list-style: none; }
+  .trend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .trend-item:last-child { border-bottom: none; }
+  .trend-item:hover { background: #242424; }
+  .trend-rank {
+    font-family: 'Baloo 2', cursive;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--border);
+    width: 24px;
+    flex-shrink: 0;
+  }
+  .trend-rank.top { color: var(--saffron); }
+  .trend-info { flex: 1; }
+  .trend-title { font-size: 12.5px; font-weight: 800; color: #ddd; line-height: 1.3; }
+  .trend-views { font-size: 11px; font-weight: 700; color: var(--saffron); margin-top: 2px; }
+  .trend-fire { font-size: 16px; }
+
+  /* POLL */
+  .poll-body { padding: 14px; }
+  .poll-q { font-size: 14px; font-weight: 800; color: white; margin-bottom: 12px; line-height: 1.4; }
+  .poll-opt {
+    background: #2a2a2a;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ccc;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .poll-opt:hover { border-color: var(--saffron); color: white; }
+  .poll-opt .fill {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: rgba(255,107,0,0.15);
+    border-radius: 6px;
+    transition: width 0.4s;
+  }
+  .poll-opt span { position: relative; z-index: 1; }
+  .poll-opt .pct { font-size: 12px; font-weight: 900; color: var(--saffron); position: relative; z-index: 1; }
+  .poll-total { font-size: 11px; font-weight: 700; color: #555; margin-top: 6px; text-align: center; }
+
+  /* SOCIAL FOLLOW */
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+  .soc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.2s;
+  }
+  .soc-btn:hover { opacity: 0.85; }
+  .soc-btn.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #bc1888); }
+  .soc-btn.yt { background: #ff0000; }
+  .soc-btn.wa { background: #25d366; color: #000; }
+  .soc-btn.tg { background: #0088cc; }
+
+  /* TAGS */
+  .tags-wrap { padding: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: #2a2a2a;
+    border: 1px solid var(--border);
+    color: #aaa;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .tag:hover { background: var(--saffron); color: white; border-color: var(--saffron); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #0A0A0A;
+    border-top: 3px solid var(--saffron);
+    padding: 30px 20px 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .footer-logo {
+    font-family: 'Baloo 2', cursive;
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+  .footer-tagline { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 16px; }
+  .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 16px; }
+  .footer-links a { color: #666; font-size: 12px; font-weight: 800; text-decoration: none; }
+  .footer-links a:hover { color: var(--saffron); }
+  .footer-copy { font-size: 11px; font-weight: 700; color: #333; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .feat-card { grid-column: 1; min-height: 240px; }
+    .main-wrap { grid-template-columns: 1fr; }
+    .content-grid { grid-template-columns: 1fr; }
+    .meme-row { grid-template-columns: repeat(2, 1fr); }
+    .header-nav { display: none; }
+    .header-search input { width: 100px; }
+  }
+  @media (max-width: 540px) {
+    .meme-row { grid-template-columns: 1fr; }
+    .feat-title { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">
+    <span class="logo-flame">🔥</span>
+    <div>
+      <div class="logo-text">Viral Bharat</div>
+      <div class="logo-sub">वायरल भारत</div>
+    </div>
+  </a>
+
+  <nav class="header-nav">
+    <a href="#" class="active">🏠 Home</a>
+    <a href="#">🤣 Memes</a>
+    <a href="#">😱 Facts</a>
+    <a href="#">🔥 Trending</a>
+    <a href="#">🏏 Sports</a>
+    <a href="#">🎬 Roast</a>
+  </nav>
+
+  <div class="header-search">
+    <span>🔍</span>
+    <input type="text" placeholder="Search viral...">
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-tag">🔥 TRENDING</div>
+  <div class="ticker-content">
+    <span>
+      😱 Bhai kya scene hai! &nbsp;||&nbsp;
+      🤣 Ye meme toh viral ho gaya &nbsp;||&nbsp;
+      🏏 India ne phir mara chauka &nbsp;||&nbsp;
+      😤 Politician ka video leak &nbsp;||&nbsp;
+      🧠 Ye fact sun ke dimag ghum jayega &nbsp;||&nbsp;
+      🎬 Bollywood ka biggest roast 2026 &nbsp;||&nbsp;
+      😂 School teacher ne phir funny kaam kiya &nbsp;||&nbsp;
+      🔥 10 crore log dekh chuke hain ye video
+    </span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+
+    <!-- FEATURED BIG CARD -->
+    <div class="feat-card">
+      <div class="feat-card-bg">🤣</div>
+      <div class="feat-card-overlay"></div>
+      <div class="feat-card-content">
+        <span class="feat-category">🔥 Viral of the Day</span>
+        <div class="feat-title">Bhai ne job interview mein aisa jawab diya ki interviewer bhi hasa — phir hire bhi kar liya 😂</div>
+        <div class="feat-meta">
+          <span class="views">🔥 2.3M Views</span>
+          <span>😂 45K Laughs</span>
+          <span>📤 89K Shares</span>
+          <span>· 2 ghante pehle</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDE MINI CARDS -->
+    <div class="side-stack">
+      <div class="mini-card">
+        <span class="mini-card-emoji">😱</span>
+        <div>
+          <div class="mini-card-title">India ka wo village jahan aaj bhi light nahi aayi — par 5G chalta hai</div>
+          <div class="mini-card-tag">🧠 WTF Fact</div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <span class="mini-card-emoji">🏏</span>
+        <div>
+          <div class="mini-card-title">Virat ne ek haath se catch pakda — camera bhi bhaag gaya</div>
+          <div class="mini-card-tag">🏆 Sports Viral</div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <span class="mini-card-emoji">🎬</span>
+        <div>
+          <div class="mini-card-title">2026 ka sabse bada Bollywood Roast — koi nahi bacha is baar</div>
+          <div class="mini-card-tag">🔥 Roast</div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <span class="mini-card-emoji">🤡</span>
+        <div>
+          <div class="mini-card-title">Neta ji ne speech mein gaana ga diya — public mast ho gayi</div>
+          <div class="mini-card-tag">😂 Funny</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+  <div>
+
+    <!-- TRENDING POSTS -->
+    <div class="section-head">
+      <h2>🔥 Trending Ab</h2>
+      <div class="line"></div>
+      <a href="#" class="see-all">Sab dekho →</a>
+    </div>
+    <div class="content-grid">
+
+      <div class="post-card">
+        <div class="post-thumb">😤
+          <div class="post-badge">VIRAL</div>
+        </div>
+        <div class="post-body">
+          <div class="post-title">Auto driver ne MBA wale ko gyaan diya — Twitter pe toh toofan aa gaya</div>
+          <div class="post-footer">
+            <span class="fire">🔥 1.8M Views</span>
+            <span>3 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-thumb">🐄
+          <div class="post-badge green">NEW</div>
+        </div>
+        <div class="post-body">
+          <div class="post-title">Gaaye ne traffic rok liya highway pe — police bhi hairan, log bhi mast</div>
+          <div class="post-footer">
+            <span class="fire">🔥 980K Views</span>
+            <span>2 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-thumb">👨‍💻
+          <div class="post-badge saffron">HOT</div>
+        </div>
+        <div class="post-body">
+          <div class="post-title">IIT wale bhai ne 1 crore ki naukri chod ke chai ki dukaan kholi — ab sab usse follow karte hain</div>
+          <div class="post-footer">
+            <span class="fire">🔥 3.2M Views</span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-thumb">🎤
+          <div class="post-badge">ROAST</div>
+        </div>
+        <div class="post-body">
+          <div class="post-title">Reality show contestant ne judge ko hi roast kar diya — show band hone wala tha 😂</div>
+          <div class="post-footer">
+            <span class="fire">🔥 2.1M Views</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MEMES SECTION -->
+    <div class="section-head">
+      <h2>🤣 Aaj ke Memes</h2>
+      <div class="line"></div>
+      <a href="#" class="see-all">Sab dekho →</a>
+    </div>
+    <div class="meme-row">
+
+      <div class="meme-card">
+        <div class="meme-img">😭</div>
+        <div class="meme-cap">Jab Monday subah 6 baje alarm baje aur Sunday raat lagti hai 3 second ki</div>
+        <div class="meme-stats">😂 <span>45K</span> &nbsp;📤 <span>12K</span></div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-img">🫠</div>
+        <div class="meme-cap">Exam hall mein jab likha hua sab bhool jaata hai lekin dost ka number yaad rehta hai</div>
+        <div class="meme-stats">😂 <span>67K</span> &nbsp;📤 <span>23K</span></div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-img">💀</div>
+        <div class="meme-cap">Interviewer: "5 saal mein kahan dekhte ho apne aap ko?" &nbsp; Main: "Seedha sawaal karo bhai"</div>
+        <div class="meme-stats">😂 <span>89K</span> &nbsp;📤 <span>34K</span></div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-img">🤡</div>
+        <div class="meme-cap">Jab social media pe sab success stories dikhti hain aur main hoon ki raat ko maggi bana raha hoon</div>
+        <div class="meme-stats">😂 <span>1.2L</span> &nbsp;📤 <span>56K</span></div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-img">🫡</div>
+        <div class="meme-cap">Papa: "Mera beta engineer banega" &nbsp; Main (25 saal baad): bhai abhi bhi soch raha hoon</div>
+        <div class="meme-stats">😂 <span>78K</span> &nbsp;📤 <span>29K</span></div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-img">😤</div>
+        <div class="meme-cap">Rishtedar: "Shaadi kab karoge?" &nbsp; Main: Pehle internet ka bill toh bhar loon bhai</div>
+        <div class="meme-stats">😂 <span>2.3L</span> &nbsp;📤 <span>89K</span></div>
+      </div>
+
+    </div>
+
+    <!-- WTF FACTS -->
+    <div class="section-head">
+      <h2>🧠 WTF Facts — Ye Sach Hai!</h2>
+      <div class="line"></div>
+      <a href="#" class="see-all">Sab dekho →</a>
+    </div>
+    <div class="facts-list">
+      <div class="fact-item">
+        <div class="fact-num">01</div>
+        <div class="fact-text">Octopus ke 3 dil hote hain — phir bhi wo tujhse zyada loyal hai</div>
+        <div class="fact-emoji">🐙</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">02</div>
+        <div class="fact-text">Honey kabhi kharab nahi hoti — 3000 saal purani Egyptian honey aaj bhi kha sakte hain</div>
+        <div class="fact-emoji">🍯</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">03</div>
+        <div class="fact-text">Tera phone jitne bacteria handle karta hai, toilet se 10 guna zyada hain screen pe</div>
+        <div class="fact-emoji">📱</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">04</div>
+        <div class="fact-text">Banana technically ek berry hai, aur strawberry nahi — science ne phir dimag toda</div>
+        <div class="fact-emoji">🍌</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">05</div>
+        <div class="fact-text">Humming birds itni tez hote hain ki backward bhi udte hain — main seedha bhi nahi chal sakta</div>
+        <div class="fact-emoji">🐦</div>
+      </div>
+    </div>
+
+    <!-- ROAST SECTION -->
+    <div class="roast-card">
+      <div class="roast-label">🎬 Weekly Roast</div>
+      <div class="roast-title">Is Hafte Ka Sabse Bada Roast: "Influencer Culture" 💀</div>
+      <div class="roast-text">Bhai, aaj kal har doosra banda influencer ban gaya hai. Ek video upload kiya, filter lagaya, aur ho gaye "content creator". Camera ke aage kuch bhi boldo, bass background mein sunset hona chahiye. Aur captions? "Be yourself 🌟 grind 💪 manifest ✨" — bhai ye life advice hai ya refrigerator magnet collection?</div>
+      <a href="#" class="roast-btn">Pura Roast Padho 🔥</a>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- TRENDING TODAY -->
+    <div class="sidebar-card">
+      <div class="sidebar-head">📈 Trending Today</div>
+      <ul class="trend-list">
+        <li class="trend-item">
+          <div class="trend-rank top">1</div>
+          <div class="trend-info">
+            <div class="trend-title">Auto Driver vs MBA — Gyaan Battle</div>
+            <div class="trend-views">🔥 2.3M views</div>
+          </div>
+          <span class="trend-fire">🔥</span>
+        </li>
+        <li class="trend-item">
+          <div class="trend-rank top">2</div>
+          <div class="trend-info">
+            <div class="trend-title">IIT Chai Wala — Zindagi ke sach</div>
+            <div class="trend-views">🔥 3.2M views</div>
+          </div>
+          <span class="trend-fire">🔥</span>
+        </li>
+        <li class="trend-item">
+          <div class="trend-rank top">3</div>
+          <div class="trend-info">
+            <div class="trend-title">Cow stops highway traffic — Viral Video</div>
+            <div class="trend-views">🔥 980K views</div>
+          </div>
+        </li>
+        <li class="trend-item">
+          <div class="trend-rank">4</div>
+          <div class="trend-info">
+            <div class="trend-title">Monday meme hits 1 crore shares</div>
+            <div class="trend-views">🔥 1.1M views</div>
+          </div>
+        </li>
+        <li class="trend-item">
+          <div class="trend-rank">5</div>
+          <div class="trend-info">
+            <div class="trend-title">Influencer roast goes viral</div>
+            <div class="trend-views">🔥 890K views</div>
+          </div>
+        </li>
+        <li class="trend-item">
+          <div class="trend-rank">6</div>
+          <div class="trend-info">
+            <div class="trend-title">Rishtedar wala meme breaks internet</div>
+            <div class="trend-views">🔥 2.3L views</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- POLL -->
+    <div class="sidebar-card">
+      <div class="sidebar-head">📊 Aaj Ka Poll</div>
+      <div class="poll-body">
+        <div class="poll-q">Sabse bada lie kaunsa hai?</div>
+        <div class="poll-opt">
+          <div class="fill" style="width:62%"></div>
+          <span>😂 "5 minute mein aata hoon"</span>
+          <span class="pct">62%</span>
+        </div>
+        <div class="poll-opt">
+          <div class="fill" style="width:24%"></div>
+          <span>😤 "Main theek hoon"</span>
+          <span class="pct">24%</span>
+        </div>
+        <div class="poll-opt">
+          <div class="fill" style="width:14%"></div>
+          <span>📚 "Main kal se padhna shuru karunga"</span>
+          <span class="pct">14%</span>
+        </div>
+        <div class="poll-total">4,23,891 votes · 6 ghante bache</div>
+      </div>
+    </div>
+
+    <!-- FOLLOW US -->
+    <div class="sidebar-card">
+      <div class="sidebar-head">📱 Follow Karo Bhai</div>
+      <div class="social-grid">
+        <a href="#" class="soc-btn ig">📸 Instagram</a>
+        <a href="#" class="soc-btn yt">▶️ YouTube</a>
+        <a href="#" class="soc-btn wa">💬 WhatsApp</a>
+        <a href="#" class="soc-btn tg">📢 Telegram</a>
+      </div>
+    </div>
+
+    <!-- TRENDING TAGS -->
+    <div class="sidebar-card">
+      <div class="sidebar-head">🏷️ Trending Tags</div>
+      <div class="tags-wrap">
+        <a href="#" class="tag">#Memes</a>
+        <a href="#" class="tag">#ViralVideo</a>
+        <a href="#" class="tag">#India</a>
+        <a href="#" class="tag">#Funny</a>
+        <a href="#" class="tag">#Cricket</a>
+        <a href="#" class="tag">#Roast</a>
+        <a href="#" class="tag">#Facts</a>
+        <a href="#" class="tag">#WTF</a>
+        <a href="#" class="tag">#Youth</a>
+        <a href="#" class="tag">#Desi</a>
+        <a href="#" class="tag">#Bollywood</a>
+        <a href="#" class="tag">#GenZ</a>
+        <a href="#" class="tag">#Trending</a>
+        <a href="#" class="tag">#Sach</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🔥 Viral Bharat</div>
+  <div class="footer-tagline">India ka sabse tez viral content platform | वायरल भारत</div>
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#">Memes</a>
+    <a href="#">Facts</a>
+    <a href="#">Roast</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">© 2026 Viral Bharat — Sab Viral Hoga Yahan 🔥</div>
+</footer>
+
+</body>
+</html>
